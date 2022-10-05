@@ -50,10 +50,12 @@ public class Account {
 	 * @return
 	 */
 	public boolean withdraw(double money) {
-		if (money > balance){
-			throw new RuntimeException("Dinero insuficiente");}else {
-				
-			}
+		if (money > balance) {
+			// throw new RuntimeException("Dinero insuficiente");
+			return false;
+		} else if (money == 0) {
+			
+		}
 		balance -= money;
 		System.out.println("El retiro se ha completado saisfactoriamente. Su Balance actual es: " + balance);
 		return true;
