@@ -9,7 +9,9 @@ public class PruebaAccount {
 		Account a = new Account(50);
 		System.out.println("Su cuenta bancaria es: " + a.getBalance());
 		
-		a.deposit(-50);
+		a.deposit(50);
+		
+		a.withdraw(0);
 		
 
 	}
