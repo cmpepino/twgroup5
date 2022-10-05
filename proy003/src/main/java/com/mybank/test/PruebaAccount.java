@@ -11,7 +11,7 @@ public class PruebaAccount {
 		
 		a.deposit(50);
 		
-		a.withdraw(0);
+		a.withdraw(150);
 		
 
 	}
