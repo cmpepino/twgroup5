@@ -2,11 +2,14 @@ package com.mybank.domain;
 
 public class Customer {
 	// atributos
+	
 	private String firstName, lastName;
+	
 	// private Account account = new Account(0);// duda
 	private Account account;
 
 	// constructor
+	
 	public Customer(String f, String l) {
 		// validar los string
 		if (f == null && l == null) {
@@ -60,5 +63,11 @@ public class Customer {
 		account = new Account(acc);
 		// account.deposit(acc);
 	}
+
+//	@Override
+//	public String toString() {
+//		return "Cliente es " + lastName +"," + firstName ;
+//	}
+	
 
 }
