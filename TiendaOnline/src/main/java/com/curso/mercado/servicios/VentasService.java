@@ -3,19 +3,20 @@ package com.curso.mercado.servicios;
 import java.util.List;
 
 import com.curso.mercado.entidades.Producto;
-import com.curso.mercado.persistencia.ProductoInMemoryDAO;
+//import com.curso.mercado.persistencia.ProductoInMemoryDAO;
+import com.curso.mercado.persistencia.Producto_JPA_DAO;
 import com.curso.mercado.servicios.excepciones.VentasException;
 
 public class VentasService {
 	
-	private ProductoInMemoryDAO productoDAO = new ProductoInMemoryDAO();
+	private Producto_JPA_DAO<Producto> producto = new Producto_JPA_DAO<Producto>();
 
 	
 	// todos los metodos para gestionar un proceso de venta
 	
 	public void comprarProducto(int id, int cantidad) throws VentasException{
 		 // caso1.  si comprar un producto que no existe.  lanzo una excepcion
-		Producto pAVender = productoDAO.getByID(id);
+		Producto pAVender = producto.getByID(id);
 		if ( pAVender == null) {
 			throw new VentasException("Error en la venta. No existe el producto con id "+ id);
 		}
@@ -35,7 +36,7 @@ public class VentasService {
 
 	
 	public List<Producto>  listaProductoVenta(){
-		return productoDAO.getAll();
+		return producto.getAll();
 	}
 
 }

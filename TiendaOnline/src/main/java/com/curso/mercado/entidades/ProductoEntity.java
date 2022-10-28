@@ -1,4 +1,4 @@
-package com.curso.db;
+package com.curso.mercado.entidades;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -26,12 +26,12 @@ public class ProductoEntity implements Serializable {
 		super();
 	}
 
-	public ProductoEntity(Integer idProducto, String descripProducto, Double precioProducto, Integer stockProducto) {
+	public ProductoEntity(Integer idProducto, String descripProducto, Double precioProducto) {
 		super();
 		this.idProducto = idProducto;
 		this.descripProducto = descripProducto;
 		this.precioProducto = precioProducto;
-		this.stockProducto = stockProducto;
+		this.stockProducto = 5;
 	}
 
 	// Metodos

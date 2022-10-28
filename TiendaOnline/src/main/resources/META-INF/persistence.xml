@@ -14,6 +14,7 @@
 		<class>com.curso.jpa.entidades.Record</class>
 		<class>com.curso.jpa.entidades.Order</class>
 		<class>com.curso.jpa.entidades.Departamento</class>-->
+		<class>com.curso.mercado.entidades.Producto</class>
 		<exclude-unlisted-classes>false</exclude-unlisted-classes>
 		<!-- con la linea de arriba hace que todas las clases con la notacion @Entity formana parte de esta unidad de persistencia -->
 				
