@@ -43,9 +43,10 @@ public class Producto_JPA_DAO<Producto> implements GenericDAO<Producto> {
 
 	@Override
 	public Producto getByID(int id) {
-		Query consulta = em.createQuery("SELECT d FROM Producto d WHERE d.idProducto = :id");
-		consulta.setParameter("idProducto", id);
-		return consulta.getSingleResult();
+		// Aun esta en produccion
+//		Query consulta = em.createQuery("SELECT d FROM Producto d WHERE d.idProducto = :id");
+//		consulta.setParameter("idProducto", id);
+		return null;
 	}
 
 	@Override
