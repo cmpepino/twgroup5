@@ -21,6 +21,10 @@ public class HomeController {
 		//model.addAttribute("nombre", "Luis");
 		
 		if(model.getAttribute("usuario") == null) {
+			//si no existe una sesion iniciada, o sea no existe un usuario logeado, se debe redirigir hacia el login controller
+			//para eso se utiliza el comando <redirect:/url> --> indica que el navegador se dirija a la url especificada
+			//si se pone solamente la url, el programa se dirige al jsp que tega el nombre de la url.
+			//esto tiene un problema porque no esta creada la instancia que utiliza esta pagina.
 			return "redirect:/login";
 		}
 				

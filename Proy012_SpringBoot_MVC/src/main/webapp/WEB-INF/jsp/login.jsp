@@ -16,11 +16,15 @@
 
 	<h2>LOGIN</h2>
 	<!-- en la siguiente linea esta el modelAttribute. esto sincroniza con el model del loginController -->
-	<form:form action="login" method="post" modelAttribute="usuario">
+	<form:form action="login" method="post" modelAttribute="usuarioForm">
 		<form:label path="nombre">Nombre de usuario:</form:label>
-		<form:input path="nombre" /><br/>
+		<form:input path="nombre" />
+		<form:errors path="nombre"></form:errors>
+		<br/>
 		<form:label path="clave">Clave:</form:label>
-		<form:input path="clave" /><br/>
+		<form:password path="clave" />
+		<form:errors path="clave"></form:errors>
+		<br/>
 		<form:button>Login</form:button>
 	</form:form>
 	

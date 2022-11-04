@@ -1,14 +1,35 @@
 package com.curso.spring.entidades;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
-public class Pedido {
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+@Entity
+public class Pedido implements Serializable{
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PED_SEQ")
+	@SequenceGenerator(sequenceName = "PEDIDO_SEQ", name = "PED_SEQ", allocationSize = 1)
+	@Column(name = "ID")
 	private Integer id;
+
+	@Column(name = "USUARIO")
 	private String user;
+
+	@Column(name = "DESCRIPCION")
+	@NotNull
+	@Size(min = 2)
 	private String desc;
+
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name = "FECHA_PEDIDO")
 	private Date date;
+
+	@Column(name = "ENTREGADO")
 	private boolean entregado;
 
 	public Pedido() {
@@ -83,8 +104,8 @@ public class Pedido {
 
 	@Override
 	public String toString() {
-		return "Pedido [id=" + id + ", cliente=" + user + ", producto=" + desc + ", date=" + date
-				+ ", entregado=" + entregado + "]";
+		return "Pedido [id=" + id + ", cliente=" + user + ", producto=" + desc + ", date=" + date + ", entregado="
+				+ entregado + "]";
 	}
 
 }

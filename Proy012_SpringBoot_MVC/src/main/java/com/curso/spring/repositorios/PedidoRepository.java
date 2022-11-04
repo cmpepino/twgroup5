@@ -10,6 +10,6 @@ public interface PedidoRepository {
 	void add(Pedido pedido);
 
 	Collection<Pedido> getPedidosbyUser(String user);
-	
-	
+	Collection<Pedido> getAll();
+	Pedido getbyId(Integer id);
 }
