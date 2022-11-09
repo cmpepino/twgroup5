@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.curso.spring.entidades.Pedido;
 import com.curso.spring.entidades.Usuario;
+import com.curso.spring.excepciones.PedidosException;
 import com.curso.spring.repositorios.PedidoRepositoryImp;
 import com.curso.spring.servicios.PedidoService;
 
@@ -116,7 +117,7 @@ public class PedidoController {
 	// .....Dar de baja un pedido.....
 	// solo para admin
 	@GetMapping("/pedido/delete")
-	public String bajaProducto(Model model, @RequestParam("id") Integer id) {
+	public String bajaProducto(Model model, @RequestParam("id") Integer id) throws PedidosException {
 
 		Usuario user = (Usuario) model.getAttribute("usuario");
 		if (user.getRol().equals("cliente")) {
